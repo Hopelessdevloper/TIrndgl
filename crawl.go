@@ -31,7 +31,7 @@ func main() {
 
 	// Stage HTTP request
 
-	request, err := http.NewRequest("GET", "https://www.devdungeon.com", nil)
+	request, err := http.NewRequest("GET", "https://www.biqugeabc.com/read/618065/11985.html", nil)
 	if err != nil {
 		log.Fatal(err)
 	}
