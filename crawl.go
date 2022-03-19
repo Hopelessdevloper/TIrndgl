@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	
+
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
@@ -22,17 +22,14 @@ func processElement(index int, element *goquery.Selection) {
 
 func main() {
 
-	
-
 	// Create Client
-	log.Println("Client Created")
 
 	client := &http.Client{
 		Timeout: 30 * time.Second,
 	}
 
 	// Stage HTTP request
-	log.Println("HTTP Request Created")
+
 	request, err := http.NewRequest("GET", "https://www.devdungeon.com", nil)
 	if err != nil {
 		log.Fatal(err)
@@ -41,8 +38,6 @@ func main() {
 	request.Header.Set("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 12.3; rv:98.0) Gecko/20100101 Firefox/98.0")
 
 	//Do the HTTP Request
-
-	log.Println("Sent The HTTP Request")
 
 	response, err := client.Do(request)
 	if err != nil {
@@ -53,7 +48,6 @@ func main() {
 
 	// Create a goquery document from the HTTP response
 
-	log.Println("goquery document created form response body")
 	document, err := goquery.NewDocumentFromReader(response.Body)
 	if err != nil {
 		log.Fatal("Error loading HTTP response body. ", err)
