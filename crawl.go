@@ -13,12 +13,13 @@ import (
 // This will get called for each HTML element found
 
 func processElement(index int, element *goquery.Selection) {
-	// See if the p attribute exists on the element
-	p, exists := element.Attr("p")
-	if exists {
-		fmt.Println(p)
-	}
+    // See if the href attribute exists on the element
+    href, exists := element.Attr("href")
+    if exists {
+        fmt.Println(href)
+    }
 }
+
 
 func main() {
 
@@ -55,5 +56,5 @@ func main() {
 
 	// Find all links and process them with the function
 	// defined earlier
-	document.Find("p").Each(processElement)
+	document.Find("a").Each(processElement)
 }
