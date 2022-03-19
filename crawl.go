@@ -13,10 +13,10 @@ import (
 // This will get called for each HTML element found
 
 func processElement(index int, element *goquery.Selection) {
-	// See if the href attribute exists on the element
-	href, exists := element.Attr("href")
+	// See if the p attribute exists on the element
+	p, exists := element.Attr("p")
 	if exists {
-		fmt.Println(href)
+		fmt.Println(p)
 	}
 }
 
@@ -59,6 +59,7 @@ func main() {
 	defer response.Body.Close()
 
 	// Create a goquery document from the HTTP response
+
 	log.Println("goquery document created form response body")
 	document, err := goquery.NewDocumentFromReader(response.Body)
 	if err != nil {
@@ -67,5 +68,5 @@ func main() {
 
 	// Find all links and process them with the function
 	// defined earlier
-	document.Find("a").Each(processElement)
+	document.Find("p").Each(processElement)
 }
