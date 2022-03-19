@@ -1,7 +1,7 @@
 package main
 
 import (
-"net/html" 
+
 	"github.com/gocolly/colly"
 	"github.com/gocolly/colly/extensions" 
 )
