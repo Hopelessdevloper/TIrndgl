@@ -22,14 +22,7 @@ func processElement(index int, element *goquery.Selection) {
 
 func main() {
 
-	//Create log file
-	fmt.Println("Created Log file", time.Now())
-	file, err := os.OpenFile("logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.SetOutput(file)
+	
 
 	// Create Client
 	log.Println("Client Created")
